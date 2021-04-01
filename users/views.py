@@ -18,7 +18,6 @@ class CheckBalanceView(APIView):
         
         balance = investor.balance
         loan_amount = offer.loan.total_loan_amount()
-
         if balance >= loan_amount:
             return Response({'invest_ability': True})
         else:
